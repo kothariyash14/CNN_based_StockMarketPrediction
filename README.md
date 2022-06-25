@@ -22,9 +22,9 @@ The code for the assignment is present in the file SoC_Assignment2.ipynb.
 ### Instructions for running the code :
 To run the code, upload the .ipynb file to Google Colab and run Colab using GPU accelerator. Then upload the dataset csv file to Colab and run the whole notebook sequentially.
 ### Explanation of the code :
-Firstly, imported the packages like tensorflow, numpy and matplotlib and then downloaded data from the CT scans dataset.
-Then, data was loaded and nibabel package was imported to read the scans, which were in nifti format.To process the data, firstly 3D volume was rotated by 90 degrees to fix the orientation.Then raw intensity(in HU units) was scaled to be between 0 and 1. Width, height and depth were resized.
-Then the the scans were read from the class directories and labels were assigned. Scans were downsampled to have dimensions 128x128x64. Raw HU values were rescaled in the range 0 to 1. Lastly, splitted the dataset into train and validation subsets. Then data augmentation was performed by rotating the volume at random angles while training. For performing 3D convolutions on the data, a dimension of size 1 was added at axis 4, making new shape as (samples, height, width, depth, 1). 
+Firstly, imported the packages like tensorflow, numpy and matplotlib and then downloaded data from the CT scans dataset. <br />
+Then, data was loaded and nibabel package was imported to read the scans, which were in nifti format.To process the data, firstly 3D volume was rotated by 90 degrees to fix the orientation.Then raw intensity(in HU units) was scaled to be between 0 and 1. Width, height and depth were resized. <br />
+Then the the scans were read from the class directories and labels were assigned. Scans were downsampled to have dimensions 128x128x64. Raw HU values were rescaled in the range 0 to 1. Lastly, splitted the dataset into train and validation subsets. Then data augmentation was performed by rotating the volume at random angles while training. For performing 3D convolutions on the data, a dimension of size 1 was added at axis 4, making new shape as (samples, height, width, depth, 1). <br />
 Then, the 3D CNN was defined setting width, height and depth to be of 128, 128 and 64 unit respectively. To train the model, learning rate was kept very small(0.0001) and 100 epochs were decided for training. The loss function was binary cross-entropy. The prediction was then made on a single CT scan and confidence % was calculated.
 
 
