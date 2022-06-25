@@ -20,7 +20,7 @@ A subset of MosMedData: Chest CT Scans with COVID-19 Related Findings Dataset, c
 ### Code :
 The code for the assignment is present in the file SoC_Assignment2.ipynb.
 ### Instructions for running the code :
-To run the code, upload the .ipynb file to Google Colab and run Colab using GPU accelerator. Then upload the dataset csv file to Colab and run the whole notebook sequentially.
+To run the code, upload the .ipynb file to Google Colab and run Colab using GPU accelerator. Run the whole notebook sequentially.
 ### Explanation of the code :
 Firstly, imported the packages like tensorflow, numpy and matplotlib and then downloaded data from the CT scans dataset. <br />
 Then, data was loaded and nibabel package was imported to read the scans, which were in nifti format.To process the data, firstly 3D volume was rotated by 90 degrees to fix the orientation.Then raw intensity(in HU units) was scaled to be between 0 and 1. Width, height and depth were resized. <br />
